@@ -1,7 +1,11 @@
-
+if game.CoreGui:FindFirstChild("The mimic script by TTJY BETA") then
+local ddddddddestroy = game.CoreGui["The mimic script by TTJY BETA"]
+ddddddddestroy:Destroy()
+end
+task.wait()
 -- init
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("The mimic script by TTJY", 5013109572)
+local venyx = library.new("The mimic script by TTJY BETA", 5013109572)
 
 -- themes
 local themes = {
@@ -190,7 +194,7 @@ end)
 local page = venyx:addPage("book2 chapter2", 5012544693)
 local section1 = page:addSection("Start")
 section1:addButton("Auto win", function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252.78,23.1,-73.17)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252.78,1000,-73.17)
 local player = game.Players.LocalPlayer.Character.HumanoidRootPart
 
   for _, v in pairs(game.Workspace:GetDescendants()) do
@@ -198,49 +202,75 @@ local player = game.Players.LocalPlayer.Character.HumanoidRootPart
                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart or game.Players.LocalPlayer.Character.Torso, v:FindFirstAncestorWhichIsA("Part"),0)
                    end
                end
-task.wait(10)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-550,30,-87.29)
+task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252.78,1000,-73.17)
+task.wait()
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(30, Enum.EasingStyle.Linear)
+
+local tween = tweenService:Create(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-550, 30, -87.29)})
+tween:Play()
 end)
 local section2 = page:addSection("someone eat meat")
 section2:addButton("Auto win", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3953.17,594.22,317.07)
-		task.wait()
+		task.wait(1)
 		for i, v in pairs(Workspace:GetDescendants()) do
     	if v:IsA("ProximityPrompt") and v.Parent:IsA("BasePart") and v.Parent.Parent.Name == "TeleportDoor" then
+    	wait(0.3)
         fireproximityprompt(v)
     end
 end
-venyx:Notify("Click again", value)
+venyx:Notify("error02", "report this to ttjy")
 end)
 local section3 = page:addSection("Meat")
 section3:addButton("Talk", function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4443.11,711.37,1163.78)
-for i, v in pairs(Workspace:GetDescendants()) do
-    	if v:IsA("ProximityPrompt") and v.Parent:IsA("BasePart")  then
-    	wait(0.5)
-        fireproximityprompt(v)
-		task.wait()
-    	end
-		end
+venyx:Notify("error03", "report this to ttjy")
+local TalkDebounce = false
+local Client = game.Players.LocalPlayer
+local VirtualUser = game:GetService("VirtualUser")
+if not TalkDebounce then 
+        if Client.Character then 
+            if Client.Character:FindFirstChild('HumanoidRootPart') then 
+                TalkDebounce = true
+                Client.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-4443, 711, 1164)
+                task.wait(0.28)
+                for Index, v in ipairs(game:GetService("Workspace"):GetDescendants()) do 
+                    if v.Name == "NoppeNPC" then 
+                        local Prompt = v.RootPart:FindFirstChildOfClass('ProximityPrompt')
+                        fireproximityprompt(Prompt, 1)
+                    end 
+                end 
+                for i = 1,100 do 
+                    VirtualUser:ClickButton1(Vector2.new(500,0))
+                    task.wait(0.001)
+                end 
+                TalkDebounce = false
+            end 
+        end 
+    end
 end)
+
+
+
+
 
 local section4 = page:addSection("Auto Meat")
 section4:addButton("Auto win", function()
 if game.Players.LocalPlayer.PlayerGui["00_Marker"].Markers:FindFirstChild("Frame") then
-venyx:Notify("WAIT", value)
-for i, v in ipairs(Workspace:GetDescendants()) do
-    if v.Parent:IsA("BasePart") and v:FindFirstChild("EndRoom") then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = EndRoom["Coral_3_G3"].CFrame
+for Index, v in ipairs(game:GetService('Workspace'):GetDescendants()) do 
+    if v.Name == "DoorTele" then
+        local Pivot = v.WorldPivot 
+        game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = Pivot
     end
 end
 task.wait()
-for i, v in ipairs(Workspace:GetDescendants()) do
-    if v:IsA("ProximityPrompt") and v.Parent:IsA("BasePart") and v.Parent.Parent.Name == "DoorTele" then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+for i, v in pairs(Workspace:GetDescendants()) do
+    	if v:IsA("ProximityPrompt") and v.Parent:IsA("BasePart") and v.Parent.Parent.Name == "DoorTele" then
+    	wait(0.3)
+        fireproximityprompt(v)
     end
 end
-task.wait(20)
-venyx:Notify("NOW GO", value)
 else
 local success = 0
 local successbowl = 0
@@ -272,6 +302,10 @@ end)
 
 
 
+
+
+
+
 local section5 = page:addSection("RUN")
 section5:addButton("ENTER ZONE", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4590,843.64,-35.54)
@@ -281,6 +315,15 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5364,90
 task.wait(5)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5364,682.12,29.63)
 end)
+section5:addButton("FULL AUTO WIN", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4590,843.64,-35.54)
+task.wait(10)
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear)
+
+local tween = tweenService:Create(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-5364,682.12,29.63)})
+tween:Play()
+end)
 
 local section6 = page:addSection("LEVER")
 section6:addButton("ENTER ZONE", function()
@@ -288,6 +331,21 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11035,-
 end)
 
 section6:addButton("AUTO LEVER", function()
+for i, v in pairs(workspace:GetDescendants()) do
+    if v:IsA("ProximityPrompt") and v.Parent:IsA("BasePart") and v.Parent.Name == "Lever" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+        wait(0.3)
+        fireproximityprompt(v)
+    end
+end
+
+		task.wait(6)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-10060,484.1,-9.52)
+end)
+
+section6:addButton("FULL AUTO WIN", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11035,-81.4,-12.56)
+task.wait(5)
 for i, v in pairs(workspace:GetDescendants()) do
     if v:IsA("ProximityPrompt") and v.Parent:IsA("BasePart") and v.Parent.Name == "Lever" then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
@@ -369,15 +427,24 @@ end)
 
 local section7point5 = page:addSection("AFTER COOK")
 section7point5:addButton("Auto Run", function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3347.32,1205,-6824)
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(3, Enum.EasingStyle.Linear)
+
+local tween = tweenService:Create(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-3345.78,1205,-6794.84)})
+tween:Play()
 venyx:Notify("Wait For Time", value)
-wait(10)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3345.78,1205,-6794.84)
-task.wait()
+task.wait(4)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3347.32,1205,-6824)
 end)
 
 local section8 = page:addSection("CURSED ZONE")
+section8:addButton("Auto win cursed zone1", function()
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(3, Enum.EasingStyle.Linear)
+
+local tween = tweenService:Create(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-4250.71,613.7,-968.13)})
+tween:Play()
+end)
 section8:addButton("TELEPORT TO CURSED ZONE 2", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4079.71,613.7,-968.13)
 end)
@@ -388,6 +455,22 @@ for i, v in pairs(workspace:GetDescendants()) do
             end
         end
 end)
+
+section8:addDropdown("Select hide spot", {"Hide Spot1", "Hide Spot2", "Hide Spot3"}, function(hide)
+	gaysexhod = hide
+end)
+section8:addButton("Hide", function(hide)
+	if gaysexhod == "Hide Spot1" then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4066.81,630.67,-985.54)
+		elseif gaysexhod == "Hide Spot2" then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4053.62,666.31,-951.76)
+		elseif gaysexhod == "Hide Spot3" then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4088.17,743.82,-959.96)
+		else
+		venyx:Notify("", "Select one")
+	end
+end)
+
 local section9 = page:addSection("KID")
 section9:addButton("Click this first", function()
 for i,v in pairs(workspace:GetDescendants()) do
@@ -403,6 +486,83 @@ for i,v in pairs(workspace:GetDescendants()) do
      end
 end
 end)
+section9:addButton("Teleport to Gate", function()
+for i,v in pairs(workspace:GetDescendants()) do
+  if v:IsA("BasePart") and v.Name == "Formation" then
+     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+     end
+end
+end)
+section9:addButton("Auto Get Notes", function()
+for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("ProximityPrompt") and v.Parent:IsA("BasePart") and v.Parent.Name == "Note" then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+                wait(0.3)
+                fireproximityprompt(v)
+            end
+        end
+end)
+
+local section10 = page:addSection("Nagisa")
+section10:addButton("Anti Nagisa laser", function()
+while true do
+		for i, v in pairs(workspace:GetDescendants()) do
+            if v.Name == "POISON" then
+local distance = 100
+
+while true do
+	localplayer = game.Players.LocalPlayer 
+ 	Char = localplayer.Character or workspace:FindFirstChild(localplayer.Name)
+         HRP = Char and Char:FindFirstChild("HumanoidRootPart")
+        if not Char or not HRP then
+           
+        end
+         p = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+         hrd = game.Players.LocalPlayer.Character.HumanoidRootPart
+         py = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+         
+    local character = game.Players.LocalPlayer.Character
+    local position = v and v.Position or nil
+    currentPos = Vector3.new(p.x, 100, p.z)
+    if position and (position - character.HumanoidRootPart.Position).Magnitude <= distance then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1982.58,100,-4780.12)
+    end
+    
+    wait(0.1)
+end
+end
+	end
+	end
+end)
+
+section10:addButton("Auto Get cannon ball", function()
+while task.wait() do
+		for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("ProximityPrompt") and v.Parent:IsA("BasePart") and v.Parent.Parent.Name == "BallGiver" and game.Players.LocalPlayer.PlayerGui.BossFight.Ammo.Text == "0" then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+                wait(0.3)
+                fireproximityprompt(v)
+                fireproximityprompt(v)
+                fireproximityprompt(v)
+                fireproximityprompt(v)
+                fireproximityprompt(v)
+                task.wait()
+            end
+end
+	end
+end)
+
+local section11 = page:addSection("Nagisa Serpent")
+section11:addButton("COMMING SOON", function()
+
+end)
+
+
+
+
+
+
+
 
 
 -- second page
