@@ -1,11 +1,11 @@
-if game.CoreGui:FindFirstChild("The mimic script by TTJY") then
-local ddddddddestroy = game.CoreGui["The mimic script by TTJY"]
+if game.CoreGui:FindFirstChild("TTJY X POOM HUB X CAT SUS X KTOLLT") then
+local ddddddddestroy = game.CoreGui["TTJY X POOM HUB X CAT SUS X KTOLLT"]
 ddddddddestroy:Destroy()
 end
 task.wait()
 -- init
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("The mimic script by TTJY", 5013109572)
+local venyx = library.new("TTJY X POOM HUB X CAT SUS X KTOLLT", 5013109572)
 
 -- themes
 local themes = {
